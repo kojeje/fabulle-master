@@ -1,0 +1,79 @@
+{% extends "@App/base_admin.html.twig" %}
+
+{% block flash %}
+    {% for message in app.flashes('notice') %}
+        <div class="flash-notice">
+            {{ message }}
+        </div>
+    {% endfor %}
+{% endblock %}
+
+{% block form %}
+    <div class="register">
+        <div class="createUser_logo">
+            <div class="img">
+                <img src="{{ asset('assets/img/logo_test.png') }}" alt="img">
+            </div>
+            <h2 class="statut"><span>{{ app.user.username }} ! <br> </span>Créez votre référence ! </h2>
+
+
+        </div>
+        {{ form_start(formReferencies, {attr: {novalidate: 'novalidate', class:'formulaire'}}) }}
+        <div class="form_container">
+            <h2>Votre référence</h2>
+            <div class="field col-md-4">
+                {{ form_errors(formReferencies.salle) }}
+                {{ form_label(formReferencies.salle,null,
+                    {
+                        'label':'Salle',
+                    }
+                )
+                }}
+                {{ form_widget(formReferencies.salle, {'attr': {"class":'titre'}}) }}
+            </div>
+            <div class="field col-md-4">
+                {{ form_errors(formReferencies.cp) }}
+                {{ form_label(formReferencies.cp,null,
+                    {
+                        'label':'CP',
+                    }
+                )
+                }}
+                {{ form_widget(formReferencies.cp, {'attr': {"class":'titre'}}) }}
+            </div>
+            <div class="field col-md-4">
+                {{ form_errors(formReferencies.commune) }}
+                {{ form_label(formReferencies.commune,null,
+                    {
+                        'label':'Commune',
+                    }
+                )
+                }}
+                {{ form_widget(formReferencies.commune, {'attr': {"class":'titre'}}) }}
+            </div>
+            <div class="field col-md-4">
+                {{ form_errors(formReferencies.date) }}
+                {{ form_label(formReferencies.date,null,
+                    {
+                        'label':'date',
+                    }
+                )
+                }}
+                {{ form_widget(formReferencies.date, {'attr': {"class":'titre'}}) }}
+            </div>
+
+
+
+
+
+            <div class="f_type">
+                {{ form_widget(formReferencies.submit, { 'label': 'soumettre' },{'attr': {"class":'submit'} }) }}
+            </div>
+
+        </div>
+
+
+        {{ form_end(formReferencies) }}
+    </div>
+{% endblock %}
+

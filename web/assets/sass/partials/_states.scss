@@ -1,0 +1,81 @@
+html
+{
+  scroll-behavior: smooth;
+}
+a:hover
+{
+  color: $link !important;
+  text-decoration: none;
+}
+
+.button:hover,
+.totop:hover,
+.carousel-control-prev-icon:hover,
+.carousel-control-next-icon:hover
+{
+  opacity: 1;
+  color: $link !important;
+}
+.totop:hover
+{
+  background: rgba(255, 255, 255, 0.2);
+  border: 1px solid $white;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  border-radius: 20px;
+  opacity:1;
+}
+.totop i:hover
+{
+  color: $link;
+}
+.old-show:hover
+{
+  opacity:1;
+}
+.event-home-bloc:hover
+{
+  background: $link;
+  color: #000000 !important;
+  font-size: 16px;
+  font-weight: 900;
+  border: 3px solid $white;
+}
+.event-home-bloc:hover .salle
+{
+  color: #000000 !important;
+}
+.event-home-bloc-medal:hover
+{
+  font-size: 12px;
+  font-weight: 900;
+}
+.url:hover a
+{
+  color: $white !important;
+}
+#appbundle_show_submit:hover
+{
+  background: $link !important;
+  color: $black !important;
+  border: 2px solid $white !important;
+}
+.update:hover
+{
+  background: blue !important;
+  color: $white !important;
+
+}
+.delete:hover
+{
+  background: red !important;
+  color: $white !important;
+
+}
+.submit_mail:hover
+{
+
+  background: $link;
+  color: $dark-blue;
+  font-size: 20px
+}

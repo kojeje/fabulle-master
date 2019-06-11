@@ -1,0 +1,78 @@
+{% extends '@App/base_admin.html.twig' %}
+
+{% block content %}
+<a id="article-anch" class="anch"></a>
+
+    <h1 class="loop-title">Le petit mot</h1>
+<div class="content-wrapper article_content" xmlns="http://www.w3.org/1999/html">
+    <article class="container-fluid">
+        <a id="article-anch anch"></a>
+
+        <div class="article-loop container-fluid">
+
+            {% for post in posts %}
+
+                {% if post.categorie != 'page' %}
+                    <div class="show show2 show3 show-medal row">
+                        <a class="row" href="{{ path('admin_post_id',{'id': post.id}) }}">
+                            <div class="offset-md-3 offset-3"></div>
+                            <div class="thumb-medal2 col-6 col-md-6">
+
+                                <img src="{{asset('assets/uploads/'~post.Img1)}}" alt="{{ post.imgAlt1 }}">
+
+                            </div>
+                            <div class="offset-md-3 offset-3"></div>
+                            <div class="bloc2 col-md-12">
+
+                                <h1 class="article-h1 h1-event">
+                                    <span>
+                                        {{ post.titre }}
+                                    </span>
+                                </h1>
+
+                                <div class="preview">
+
+                                    <p class="preview-content">
+                                        {{ post.text1 }}
+                                    </p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                        {#{% for event in events %}#}
+                            {#{% if show.get_field('field_5cbc31c7f2c13') == event.get_field('field_5cbc31c7f2c13') %}#}
+
+                                {#<h4 class="next-date next-date3">PROCHAINES REPRÉSENTATIONS</h4>#}
+
+                                {#<section class="event-home container">#}
+
+                                    {#<a class="row event-home-bloc event-home-bloc-medal" href="{{ event.link }}">#}
+                                        {#<div class="d-none d-md-block thumb thumb2 col-md-3">#}
+                                            {#<img src="{{ show.thumbnail.src }}" alt="thumb">#}
+                                        {#</div>#}
+                                        {#<h2 class="article-h1 d-md-none d-block">#}
+                                            {#{{ show.title }}#}
+                                        {#</h2>#}
+                                        {#<p class="col-md-3 col-12">{{ event.get_field('field_5cb4d81344d45') }}</p>#}
+                                        {#<p class="col-md-3 col-12">{{ event.get_field('field_5cb4e5ba17780') }}</p>#}
+                                        {#<p class="col-md-3 col-12">{{ event.get_field('field_5cb4e62317783') }} {{ event.get_field('field_5cb4e63d17784') }}</p>#}
+                                    {#</a>#}
+                                {#</section>#}
+
+
+
+
+            {% endif %}
+            {% endfor %}
+
+        </div>
+
+        {% include '@App/default/new-shows-loop.html.twig' %}
+
+    </article>
+</div>
+
+
+
+{% endblock %}

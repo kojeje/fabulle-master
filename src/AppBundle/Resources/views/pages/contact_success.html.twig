@@ -1,0 +1,32 @@
+{% extends "@App/base.html.twig" %}
+
+{% block contact_form %}
+    <div class="contact _bloc cv_bloc2 success_bloc">
+        <div class="success_title1">
+
+            <h1 class="subtitle_1 cv_h1">
+                <i class="fas fa-check"></i>
+                Votre message a bien été envoyé
+            </h1>
+        </div>
+        <p class="answer_soon answer_soon1">
+            Dès réception de celui-ci, je traiterais votre demande dans les plus brefs délais.
+        </p>
+        <p class="answer_soon answer_soon2">
+            A Bientôt !
+        </p>
+
+        <div class="home_button">
+            <a href="{{ path('home') }}">
+                home
+                <i class="fas fa-home"></i>
+            </a>
+
+
+
+
+        </div>
+
+    </div>
+
+{% endblock %}

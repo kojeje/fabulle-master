@@ -1,0 +1,41 @@
+<footer class="footer d-none d-md-block container-fluid">
+    <div class="footer_bloc row">
+        <div class="f-link col-md-2">
+            <a href="{{ path('admin_home') }}">
+                Accueil
+            </a>
+        </div>
+        <div class="f-link col-md-2">
+            <a href="{{ path('admin_shows') }}">
+                Les Spectacles
+            </a>
+        </div>
+
+        <div class="logo col-md-4">
+            <a href="{{ path("admin_home") }}/">
+                <img class="logo-fabulle2" src="{{ asset ('assets/img/logo_faBulle_2019.png')}}" alt="logo">
+            </a>
+        </div>
+        <div class="f-link col-md-2">
+            <a href="{{ path('admin_events') }}">
+                Dates
+            </a>
+        </div>
+        <div class="f-link col-md-2">
+            <a href="{{ path('admin_places') }}">
+                Lieux
+            </a>
+        </div>
+    </div>
+</footer>
+<footer class="footer d-md-none d-block container-fluid">
+    <div class="footer_bloc row">
+        <div class="offset-4"></div>
+        <div class="logo col-4">
+            <a href="http://localhost:8000/">
+                <img class="logo-fabulle2" src="{{ asset ('assets/img/logo_faBulle_2019.png')}}" alt="logo">
+            </a>
+        </div>
+        <div class="offset-4"></div>
+    </div>
+</footer>

@@ -1,0 +1,137 @@
+{% extends "@App/base_admin.html.twig" %}
+
+{% block flash %}
+    {% for message in app.flashes('notice') %}
+        <div class="flash-notice">
+            {{ message }}
+        </div>
+    {% endfor %}
+{% endblock %}
+
+{% block form %}
+
+    <div class="register container">
+        <a id="article-anch" class="anch d-md-none d-lg-block"></a>
+
+        {# ENTETE DU FORMULAIRE #}
+        <div class="createUser_logo row">
+            <div class="offset-lg-1 d-md-none d-lg-block"></div>
+            <div class="statut col-12 col-md-10 row">
+                <h2 class="statut_it col-md-6 col-lg-4">{{ app.user.username }} !</h2>
+                <div class="offset-md-2 d-md-none d-lg-block"></div>
+                <p class="statut_it col-md-6 col-lg-6">
+                    <span>Créez votre lieu/Salle! </span>
+                </p>
+            </div>
+            <div class="offset-lg-1 d-md-block d-lg-none"></div>
+        </div>
+
+
+        {# FORMULAIRE #}
+
+        {{ form_start(formplace, {attr: {novalidate: 'novalidate', class:'formulaire container-fluid'}}) }}
+
+        <div class="form_container">
+            <h1>Votre Lieu/Salle</h1>
+
+            {#CHAMPS#}
+
+            {#CORPS DE LA PAGE#}
+
+            <div class="corps row">
+                <h1 class="form-section-title">Section 1</h1>
+
+                {# Nom #}
+                <p class="dispo col-12">
+                    Nom de la Salle ou du lieu
+                </p>
+                <div class="col-12">
+                    {{ form_errors(formplace.name) }}
+                    {{ form_widget(formplace.name) }}
+                </div>
+
+                {# Séparateur#}
+                <hr>
+
+                <div class="offset-lg-1 d-md-none d-lg-block"></div>
+                <h2 class="col-md-10 title">Presentation</h2>
+                <div class="offset-lg-1 d-md-none d-lg-block"></div>
+                <div class="offset-lg-1 d-md-none d-lg-block"></div>
+                <div class="textarea col-md-12">
+                    {{ form_errors(formplace.presentation) }}
+                    {{ form_widget(formplace.presentation) }}
+                </div>
+                <div class="offset-lg-1 d-md-none d-lg-block"></div>
+
+                {# Séparateur#}
+                <hr>
+
+                <div class="col-12">
+
+
+
+                    <div class="field">
+                        <p>Adresse 1</p>
+                        {{ form_errors(formplace.ad1) }}
+                        {{ form_widget(formplace.ad1, {'attr': {"class":'alt'}}) }}
+
+                        <p>Adresse2</p>
+                        {{ form_errors(formplace.ad2) }}
+                        {{ form_widget(formplace.ad2, {'attr': {"class":'alt'}}) }}
+
+                        <p>CP</p>
+                        {{ form_errors(formplace.cp) }}
+                        {{ form_widget(formplace.cp, {'attr': {"class":'alt'}}) }}
+
+                        <p>Commune</p>
+                        {{ form_errors(formplace.commune) }}
+                        {{ form_widget(formplace.commune, {'attr': {"class":'alt'}}) }}
+
+                        <p>Pays</p>
+                        {{ form_errors(formplace.country) }}
+                        {{ form_widget(formplace.country, {'attr': {"class":'alt'}}) }}
+
+                        <p>n°tel</p>
+                        {{ form_errors(formplace.tel) }}
+                        {{ form_widget(formplace.tel, {'attr': {"class":'alt'}}) }}
+
+                        <p>site</p>
+                        {{ form_errors(formplace.site) }}
+                        {{ form_widget(formplace.site, {'attr': {"class":'alt'}}) }}
+
+                        <p>email</p>
+                        {{ form_errors(formplace.email) }}
+                        {{ form_widget(formplace.email, {'attr': {"class":'alt'}}) }}
+
+                        <p>gmap</p>
+                        {{ form_errors(formplace.gmap) }}
+                        {{ form_widget(formplace.gmap, {'attr': {"class":'alt'}}) }}
+                    </div>
+                    {# Séparateur#}
+                    <hr>
+                </div>
+
+        </div>
+
+
+
+    </div>
+
+
+
+    <div class="row">
+        <div class="offset-6"></div>
+        <div class="submit col-lg-6 col-md-6 ">
+            {{ form_widget(formplace.submit, { 'label': 'Publier' } ) }}
+        </div>
+        <div class="offset-lg-2 offset-md-none offset-lg-block"></div>
+    </div>
+
+    </div>
+
+    {{ form_end(formplace) }}
+
+
+{% endblock %}
+
+

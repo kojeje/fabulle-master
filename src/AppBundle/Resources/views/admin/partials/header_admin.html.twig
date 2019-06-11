@@ -1,0 +1,48 @@
+<header class="header container-fluid" id="header">
+    <div class="header_bloc row">
+        {# logo #}
+        <div class="logo col-6 col-md-2">
+            <a href="{{ path('home') }}">
+                <img class="logo_fabulle" src="{{ asset('assets/img/logo_faBulle_2019.png') }}" alt="logo">
+            </a>
+        </div>
+
+        {# Menu Administrateur #}
+        <div class="offset-4 d-block d-lg-none"></div>
+        <nav class="nav d-none d-lg-block col-md-10">
+            <div class="links d-md-flex justify-content-around">
+                <p class="link">
+                    <a href="{{ path('admin_home') }}">
+                        <i class="fal fa-home"></i>
+                    </a>
+                </p>
+                <p class="link" id="popup-header-shows-open" onclick="ShowAdminPopup()">
+                    Spectacles
+                </p>
+                {% include '@App/admin/partials/popup/admin_shows_dropdown.html.twig' %}
+
+
+                <p class="link" id="popup-header-events-open" onclick="LeEventAdminPopup()">
+                    Evènements
+                </p>
+                {% include '@App/admin/partials/popup/admin_events_dropdown.html.twig' %}
+
+                <p class="link" id="popup-header-places-open" onclick="PlaceAdminPopup()">
+                    Lieux
+                </p>
+                {% include '@App/admin/partials/popup/admin_places_dropdown.html.twig' %}
+
+
+                <a href="{{ path('fos_user_security_logout') }}" id="logout-hover">
+
+                    <p id="logout-ico">
+                        <i class="fal fa-sign-out"></i>
+                    </p>
+                </a>
+
+            </div>
+        </nav>
+        {% include '@App/admin/partials/nav-dropdown-admin.html.twig' %}
+    </div>
+</header>
+

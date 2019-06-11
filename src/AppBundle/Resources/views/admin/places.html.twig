@@ -1,0 +1,68 @@
+{% extends "@App/base_admin.html.twig" %}
+
+{% block content %}
+    <a id="article-anch" class="anch"></a>
+    <div class="content-wrapper">
+
+        <article class="place">
+            <section class="article-content container">
+                <div class="place row">
+                    {% for place in places %}
+                        <div class="endroit col-md-6">
+                            <div class="ad adress col-12">
+                                <h1 class="h1-medal hall">
+                                    {{ place.name }}
+                                </h1>
+                                {% include '@App/admin/partials/admin-places-icons.html.twig' %}
+                                <p class="ad">
+                                    {{ place.Ad1 }}
+                                </p>
+                                {% if place.ad2 %}
+                                    <p class="ad">
+                                        {{ place.Ad2 }}
+                                    </p>
+                                {% endif %}
+                                <p class="ad">
+                                    <strong>
+                                        {{ place.Cp }}
+                                    </strong>
+
+                                    <strong>
+                                        {{ place.Commune }}
+                                    </strong>
+                                </p>
+                                {% if place.Country != 'FR' %}
+                                    <p class="ad">
+                                        <strong>
+                                            {{ place.Country }}
+                                        </strong>
+                                    </p>
+                                {% endif %}
+                                <p class="ad tel">
+                                    {{ place.tel }}
+                                </p>
+                                <p class="ad url">
+                                    <a href="{{ place.Site }}" target="_blank">site web</a>
+                                </p>
+                                {% if place.email %}
+                                    <a href="mailto:"{{ place.Email }} target="_blank">email</a>
+                                {% endif %}
+                            </div>
+                            <div class="offset-md-1"></div>
+                        </div>
+                        <div class="map endroit col-md-6">
+                            {{ place.Gmap|raw  }}
+                        </div>
+                        <hr>
+                    {% endfor %}
+                </div>
+                <a href="{{ path('events') }}">
+                    <p class="back-link nest-date next-date-3">
+                        <i class="fal fa-arrow-circle-left"></i> retour dates
+                    </p>
+                </a>
+            </section>
+        </article>
+    </div>
+{% endblock %}
+

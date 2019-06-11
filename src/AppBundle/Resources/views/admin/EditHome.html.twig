@@ -1,0 +1,249 @@
+{% extends "@App/base_admin.html.twig" %}
+
+{% block flash %}
+    {% for message in app.flashes('notice') %}
+        <div class="flash-notice">
+            {{ message }}
+        </div>
+    {% endfor %}
+{% endblock %}
+
+{% block form %}
+
+    <div class="register container">
+        <a id="article-anch" class="anch d-md-none d-lg-block"></a>
+
+        {# ENTETE DU FORMULAIRE #}
+        <div class="createUser_logo row">
+            <div class="offset-lg-1 d-md-none d-lg-block"></div>
+            <div class="statut col-md-12 col-lg-10 row">
+                <h2 class="statut_it col-md-6 col-lg-4">{{ app.user.username }} !</h2>
+                <div class="offset-md-2 d-md-none d-lg-block"></div>
+                <p class="statut_it col-md-6 col-lg-6">
+                    <span>Edition page d'accueil ! </span>
+                </p>
+            </div>
+            <div class="offset-lg-1 d-md-block d-lg-none"></div>
+        </div>
+
+
+        {# FORMULAIRE #}
+        {#{{ dump(formhome) }}#}
+        {{ form_start(formhome, {attr: {novalidate: 'novalidate', class:'formulaire container'}}) }}
+
+        <div class="form_container">
+            <h1>Votre spectacle</h1>
+
+            {#CHAMPS#}
+
+            {#CORPS DE LA PAGE#}
+
+            <div class="corps row">
+
+                {# Titre du spectacle #}
+                <h2 class="col-md-6 col-lg-3">Le titre</h2>
+                <div class="field col-12 ">
+                    {{ form_errors(formhome.titre) }}
+                    {{ form_widget(formhome.titre, {'attr': {"class":'titre'}}) }}
+                </div>
+                <hr>
+                <div class="offset-lg-1 d-md-none d-lg-block"></div>
+                <h2 class="col-md-10 title">Texte principal</h2>
+                <div class="offset-lg-1 d-md-none d-lg-block"></div>
+                <div class="offset-lg-1 d-md-none d-lg-block"></div>
+                <div class="textarea col-md-12">
+                    {{ form_errors(formhome.text1) }}
+                    {{ form_widget(formhome.text1) }}
+                </div>
+                <div class="offset-lg-1 d-md-none d-lg-block"></div>
+
+                {# Séparateur#}
+                <hr>
+
+                <div id="img1" class="col-12">
+                    <div class="field">
+                        <p>Image principale</p>
+                        {{ form_errors(formhome.img1) }}
+                        {{ form_widget(formhome.img1, {'attr': {"class":'img'}}) }}
+                    </div>
+
+
+
+                    <div class="field">
+                        <p>texte alternatif</p>
+                        {{ form_errors(formhome.img_alt1) }}
+                        {{ form_widget(formhome.img_alt1, {'attr': {"class":'alt'}}) }}
+
+                        <p>infobulle</p>
+                        {{ form_errors(formhome.img_title1) }}
+                        {{ form_widget(formhome.img_title1, {'attr': {"class":'alt'}}) }}
+                    </div>
+                    {# Séparateur#}
+                    <hr>
+                </div>
+            </div>
+        </div>
+        <!--SLIDER-->
+        <div class="col-md-4 col-lg-4">
+            <label for="sl_boolean">presence d'un slider photo?</label>
+            <input type="checkbox" class="case" id="sl_boolean"
+                   name="sl_boolean"
+                   checked
+                   onclick="showHideSlider()">
+        </div>
+        <div class="corps" id="slider">
+            <H2 >SLIDER</H2>
+            <div class="row" id="img-home-2">
+                <div class="field col-lg-4 col-md-12">
+                    <p>Image slider</p>
+                    {{ form_errors(formhome.img2) }}
+                    {{ form_widget(formhome.img2, {'attr': {"class":'img'}}) }}
+                </div>
+
+                <div class="offset-lg-2 d-md-none d-lg-block"></div>
+
+                <div class="field col-12">
+                    <p>texte alternatif</p>
+                    {{ form_errors(formhome.img_alt2) }}
+                    {{ form_widget(formhome.img_alt2, {'attr': {"class":'alt'}}) }}
+                </div>
+
+            </div>
+            <div class="col-md-4 col-lg-4">
+                <label for="img3-home-field">Autre image ?</label>
+                <input type="checkbox" class="case" id="img3-home-field"
+                       name="img4"
+                       onclick="showHideImgHome3()">
+            </div>
+
+            <hr class="col-11">
+            <div class="row" id="img-home-3">
+                <div class="field col-12" id="img-home-3">
+                    <p>Image slider</p>
+
+                    {{ form_errors(formhome.img3) }}
+                    {{ form_widget(formhome.img3, {'attr': {"class":'img'}}) }}
+
+                </div>
+                <div class="offset-lg-2 d-md-none d-lg-block"></div>
+
+                <div class="field col-12">
+                    <p>texte alternatif</p>
+                    {{ form_errors(formhome.img_alt3) }}
+                    {{ form_widget(formhome.img_alt3, {'attr': {"class":'alt'}}) }}
+                </div>
+                <div class="col-md-4 col-lg-4">
+                    <label for="img4-home-field">Autre image ?</label>
+                    <input type="checkbox" class="case" id="img4-home-field"
+                           name="img5"
+                           onclick="showHideImgHome4()">
+                </div>
+
+                <hr class="col-11">
+            </div>
+            <div class="row" id="img-home-4">
+                <div class="field col-lg-4 col-12">
+                    <p>Image slider</p>
+
+                    {{ form_errors(formhome.img4) }}
+                    {{ form_widget(formhome.img4, {'attr': {"class":'img'}}) }}
+
+                </div>
+
+                <div class="offset-lg-2 d-md-none d-lg-block"></div>
+                <div class="field col-12">
+                    <p>texte alternatif</p>
+                    {{ form_errors(formhome.img_alt4) }}
+                    {{ form_widget(formhome.img_alt4, {'attr': {"class":'alt'}}) }}
+
+                </div>
+                <div class="col-md-4 col-lg-4">
+                    <label for="img5-field">Autre image ?</label>
+                    <input type="checkbox" class="case" id="img5-field"
+                           name="img5-field"
+                           onclick="showHideImgHome5()">
+
+                </div>
+                <div class="field col-12">
+                    <p>texte slider 3</p>
+                    {{ form_errors(formhome.sl_caption) }}
+                    {{ form_widget(formhome.sl_caption, {'attr': {"class":'alt'}}) }}
+
+                </div>
+                <hr class="col-11">
+            </div>
+
+            <div class="row" id="img-home-5">
+                <div class="field col-lg-4 col-12">
+                    <p>Image slider</p>
+
+                    {{ form_errors(formhome.img5) }}
+                    {{ form_widget(formhome.img5, {'attr': {"class":'img'}}) }}
+
+                </div>
+
+                <div class="offset-lg-2 d-md-none d-lg-block"></div>
+                <div class="field col-12">
+                    <p>texte alternatif</p>
+                    {{ form_errors(formhome.img_alt5) }}
+                    {{ form_widget(formhome.img_alt5, {'attr': {"class":'alt'}}) }}
+
+                </div>
+            </div>
+            <div class="field col-12">
+                <p>texte slider 3</p>
+                {{ form_errors(formhome.sl_caption) }}
+                {{ form_widget(formhome.sl_caption, {'attr': {"class":'alt'}}) }}
+
+            </div>
+            <hr class="col-11">
+
+
+
+
+        {# VIDEO #}
+        <div class="col-lg-12">
+            <label for="v_boolean">presence d'un lecteur video?</label>
+            <input type="checkbox" class="case" id="v_boolean" name="v_boolean" checked
+                   onclick="showHideVideo()">
+
+        </div>
+
+
+        <div id="video" class="corps col-lg-12 row">
+
+            <h1 class="col-12">Vidéo</h1>
+
+
+
+
+
+            <p class="col-md-12 col-lg-3">code d'intégration youtube</p>
+            <p class="col-md-12 col-lg-9">
+                {{ form_errors(formhome.youtube) }}
+                {{ form_widget(formhome.youtube) }}
+        </div>
+
+    </div>
+    </div>
+
+    <div class="offset-lg-2 d-md-none d-lg-block"></div>
+
+
+
+    <div class="row">
+        <div class="offset-6"></div>
+        <div class="submit col-lg-4 col-md-6 ">
+            {{ form_widget(formhome.submit, { 'label': 'Publier' } ) }}
+        </div>
+        <div class="offset-lg-2 offset-md-none offset-lg-block"></div>
+    </div>
+
+
+
+    {{ form_end(formhome) }}
+
+
+{% endblock %}
+
+

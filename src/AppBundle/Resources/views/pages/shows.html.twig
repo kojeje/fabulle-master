@@ -1,0 +1,19 @@
+{% extends '@App/base.html.twig' %}
+
+{% block content %}
+    <a id="article-anch" class="anch"></a>
+    <article class="bloc" id="spectacles container-fluid">
+
+
+
+            {% include '@App/Default/new-shows-loop.html.twig' %}
+            {% include '@App/Default/old-shows-loop.html.twig'%}
+        </div>
+    </article>
+    <div class="article-loop row  container-fluid event-list">
+
+        {% include ('@App/Default/events-loop.html.twig') %}
+
+
+    </div>
+{% endblock %}

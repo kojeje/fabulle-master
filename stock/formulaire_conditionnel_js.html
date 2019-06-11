@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="utf-8">
+  <title>Labels for Form Elements</title>
+  <meta name="Author" content="Ralph Phillips">
+  <style>
+    * {
+      margin: 0; padding:0; border: 0;}
+
+    body {
+      font-weight: bold; font-family: verdana; font-size: 120%; color: #333;
+      padding: 20px}
+
+    form {
+      background-color: #ABC;	border-radius: 10px; padding: 20px;}
+
+    fieldset {
+      border:  2px solid #333; border-radius: 10px; padding: 15px;
+      margin: 15px 0px;}
+
+    legend {
+      color: #900;}
+
+    input, select {
+      font-size: 120%; margin-left: 20px; width: 290px;
+      margin-bottom: 10px;
+    }
+
+    fieldset label {
+      width: 160px; display: block; float: left; clear: left;
+    }
+
+    input[type=submit] {
+      border: 3px outset #444; float: right; background-color: #FFC;
+    }
+
+    input[type=checkbox] {
+      font-size: 110%; margin: 0px; width: 30px;
+    }
+
+  </style>
+  <script>
+      function showHideShipInfo() {
+          if(document.getElementById('shipsame').checked) {
+              document.getElementById('shipinfo').style.display='none';
+          } else {
+              document.getElementById('shipinfo').style.display='block';
+          }
+      }
+
+
+  </script>
+
+
+</head>
+<body>
+
+<form method="post" action="url to script">
+  <fieldset id="billinfo">
+    <legend>Billing Information</legend>
+    <label for="fname">First Name</label> <input type="text" id="fname" name="fname"><br>
+    <label for="lname">Last Name</label> <input type="text" id="lname" name="lname"><br>
+    <label for="add1">Address</label> <input type="text" id="add1" name="address"><br>
+    <label for="city">City</label> <input type="text" id="city" name="city"><br>
+    <label for="state">State</label> <select id="state" name="state"><option value="null">choose state</option></select></label><br>
+    <label for="zip">ZIP</label> <input type="text" id="zip" name="zip"><br>
+  </fieldset>
+
+  <input type="checkbox" id="shipsame" name="shipsame" value="yes"
+         onclick="showHideShipInfo()">
+  <label for="shipsame">Shipping address is the same as the billing address</label>
+
+  <fieldset id="shipinfo">
+    <legend>Shipping Information</legend>
+    <label for="fname">First Name</label> <input type="text" id="fname" name="fname"><br>
+    <label for="lname">Last Name</label> <input type="text" id="lname" name="lname"><br>
+    <label for="add1">Address</label> <input type="text" id="add1" name="address"><br>
+    <label for="city">City</label> <input type="text" id="city" name="city"><br>
+    <label for="state">State</label> <select id="state" name="state"><option value="null">choose state</option></select></label><br>
+    <label for="zip">ZIP</label> <input type="text" id="zip" name="zip"><br>
+  </fieldset>
+
+  <input type="submit" value="Next - Confirm Order">
+
+</form>
+
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+

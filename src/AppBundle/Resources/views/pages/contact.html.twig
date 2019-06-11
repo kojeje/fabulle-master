@@ -1,0 +1,90 @@
+{% extends "@App/base.html.twig" %}
+{% block content %}
+    <a  id="article-anch" class="anch1"></a>
+    <section class="contact-section">
+        <div class="container-fluid contact-section2">
+            <div class="id row">
+
+
+                <div class="col-12 col-lg-6 coordonnees">
+                    <img src="{{ asset('assets/img/logo_faBulle_2019.png') }}" class="logo2" alt="contact">
+                    <p>24 Rue du XIV Juillet</p>
+                    <p>
+                        <span>33400</span> <strong>Talence</strong>
+                    </p>
+
+                    <p class="d-flex justify-content-around">
+                        <i class="fal fa-phone tel_flex"></i>
+                        <span class="tel_flex tel_flex2">  06 28 23 01 11</span>
+                    </p>
+                    <div class="contact-title">
+                        <h1>CONTACT</h1>
+                    </div>
+                </div>
+
+                <div class="form col-12 col-lg-6">
+                    <div class=" cv_bloc cv_bloc2">
+                        <h1 class="subtitle_1 cv_h1">Nous contacter</h1>
+                        <div class="mail_bloc2">
+                        </div>
+                        {{ form_start(form) }}
+
+                        <div class="mail_form_body">
+                            <h2 class="subtitle3">
+                                Par email :
+                            </h2>
+                            <div class="coo2">
+                                <div class="mail_bloc2">
+                                    {#<div class="mail_fields">#}
+                                        {#{{ form_label(form.first_name, 'Votre prénom') }}#}
+                                        {#{{ form_widget(form.first_name) }}#}
+                                        {#{{ form_errors(form.first_name) }}#}
+                                    {#</div>#}
+                                    <div class="mail_fields">
+                                        {{ form_label(form.name, 'Votre nom') }}
+                                        {{ form_widget(form.name) }}
+                                        {{ form_errors(form.name) }}
+                                    </div>
+                                    <div class="mail_fields">
+                                        {{ form_label(form.email, 'Votre email') }}
+                                        {{ form_widget(form.email) }}
+                                        {{ form_errors(form.email) }}
+                                    </div>
+                                    <div class="message_bloc">
+                                        <div class="mail_fields">
+                                            {{ form_label(form.subject, 'Sujet du message') }}
+                                            {{ form_widget(form.subject) }}
+                                            {{ form_errors(form.subject) }}
+                                        </div>
+                                        <div class="mail_fields textarea">
+                                            {{ form_label(form.message, 'Votre message') }}
+                                            {{ form_widget(form.message) }}
+                                            {{ form_errors(form.message) }}
+                                        </div>
+
+                                    </div>
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                        {# Render CSRF token etc .#}
+                        <div style="display:none">
+                            {{ form_rest(form) }}
+                        </div>
+                        <!-- Now add the widget with the sitekey that you retrieve in the registration -->
+                        <div class="g-recaptcha" data-sitekey="6LdGVqcUAAAAAE6W41wRMqgxr43eI95CyuFutM9j
+"></div>
+                        <input class="submit_mail" type="submit" value="Envoyer">
+
+                        {{ form_end(form) }}
+                    </div>
+                </div>
+                <div class="offset-2 d-none d-md-block"></div>
+
+
+            </div>
+        </div>
+    </section>
+{% endblock %}

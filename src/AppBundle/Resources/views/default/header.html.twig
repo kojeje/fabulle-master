@@ -1,0 +1,40 @@
+<header class="header container-fluid">
+    <div class="header_bloc row">
+
+        <div class="logo col-6 col-md-2">
+            <a href="{{ path('home') }}">
+                <img class="logo_fabulle" src="{{ asset('assets/img/logo_faBulle_2019.png') }}" alt="logo">
+            </a>
+        </div>
+        <div class="offset-4 d-block d-lg-none"></div>
+        <nav class="nav d-none d-md-block col-lg-10">
+            <ul class="links d-flex justify-content-around">
+
+                <a href="{{ path('home') }}">
+                    <li class="link">
+                        <i class="fal fa-home"></i>
+                    </li>
+                </a>
+                <a href="{{ path('shows') }}">
+                    <li class="link">Spectacles</li>
+                </a>
+                <a href="{{ path('events') }}">
+                    <li class="link">Dates</li>
+                </a>
+                <a href="{{ path('contact') }}">
+                    <li class="link">Contact</li>
+                </a>
+                <li class="link search-link">
+                <form class="form_search" method="get" action="{{ path('result') }}">
+                    <input class="search" type="search" aria-label="Search" placeholder="Code postal" name="cp">
+                    <button class="btn btn-search btn-outline-success " type="submit"><i class="fal fa-search"></i></button>
+                </form>
+                </li>
+            </ul>
+        </nav>
+
+        {% include '@App/default/nav-dropdown.html.twig' %}
+
+
+    </div>
+</header>

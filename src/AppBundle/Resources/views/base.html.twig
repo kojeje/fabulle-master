@@ -1,0 +1,16 @@
+<!doctype html>
+<html lang="fr">
+<head>
+    {% include "@App/default/head.html.twig" %}
+</head>
+<body id="body" onload="hideAdminPpopup() ; hideAdmin()" >
+{% block tmp_slide %}{% endblock %}
+{% include "@App/default/header.html.twig" %}
+{% block contact_form %}{% endblock %}
+{% block form %}{% endblock %}
+{% block content %}{% endblock %}
+{% include "@App/default/footer.html.twig" %}
+{% include "@App/default/up.html.twig" %}
+{% include "@App/default/script.html.twig" %}
+</body>
+</html>

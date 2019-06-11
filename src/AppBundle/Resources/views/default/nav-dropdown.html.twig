@@ -1,0 +1,19 @@
+<nav class="dropdown show nav d-md-none d-block col-2">
+
+    <a href="#" class="btn btn-secondary dropdown-toggle links" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <p><i class="fas fa-bars"></i></p>
+    </a>
+    <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+
+        <a class="add2 add-link dropdown-item" href="{{ path('home') }}"><i class="fal fa-home"></i></a>
+        <a class="add2 add-link dropdown-item" href="{{ path('shows') }}"><i class="Dates">Spectacles</i></a>
+        <a class="add2 add-link dropdown-item" href="{{ path('events') }}"><i class="Dates">Dates</i></a>
+        <a class="add2 add-link dropdown-item" href="{{ path('contact') }}"><i class="Dates">Contact</i></a>
+        <form class="form_search search-dropdown" method="get" action="{{ path('result') }}">
+            <input class="search" type="search" aria-label="Search" placeholder="Code postal" name="cp">
+            <button class="btn btn-search btn-outline-success " type="submit"><i class="fal fa-search"></i></button>
+        </form>
+
+    </div>
+
+</nav>

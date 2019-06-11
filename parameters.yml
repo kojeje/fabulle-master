@@ -1,0 +1,12 @@
+# This file is auto-generated during the composer install
+parameters:
+    database_host: 127.0.0.1
+    database_port: 8889
+    database_name: fabulle
+    database_user: user1
+    database_password: nSYFfeHxhw2vtZRb
+    mailer_transport: smtp
+    mailer_host: ssl0.ovh.net
+    mailer_user: contact@kojeje.fr
+    mailer_password: Kestufe12
+    secret: jematizaknook150474170674101104200812

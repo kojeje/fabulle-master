@@ -1,0 +1,96 @@
+{% extends "@App/base_admin.html.twig" %}
+
+{% block flash %}
+    {% for message in app.flashes('notice') %}
+        <div class="flash-notice">
+            {{ message }}
+        </div>
+    {% endfor %}
+{% endblock %}
+
+{% block form %}
+
+    <div class="register container">
+        <a id="article-anch" class="anch d-md-none d-lg-block"></a>
+
+        {# ENTETE DU FORMULAIRE #}
+        <div class="createUser_logo row">
+            <div class="offset-lg-1 d-md-none d-lg-block"></div>
+            <div class="statut col-12 col-md-10 row">
+                <h2 class="statut_it col-md-6 col-lg-4">{{ app.user.username }} !</h2>
+                <div class="offset-md-2 d-md-none d-lg-block"></div>
+                <p class="statut_it col-md-6 col-lg-6">
+                    <span>Créez votre évènement ! </span>
+                </p>
+            </div>
+            <div class="offset-lg-1 d-md-block d-lg-none"></div>
+        </div>
+
+
+        {# FORMULAIRE #}
+
+        {{ form_start(formleEvent, {attr: {novalidate: 'novalidate', class:'formulaire container-fluid'}}) }}
+
+            <div class="form_container">
+                <h1>Votre évènement</h1>
+
+                    {#CHAMPS#}
+
+                    {#CORPS DE LA PAGE#}
+
+                    <div class="corps row">
+                        <div class="offset-md-2 offset-lg-4"></div>
+                        <div class="field col-lg-8">
+                            {{ form_errors(formleEvent.categorie) }}
+                            {{ form_widget(formleEvent.categorie, {'attr': {"class":'date'}}) }}
+
+                        <div class="offset-md-2 offset-lg-4"></div>
+
+                        <h2 class="field col--12 col-lg-6">
+                            Spectacle
+                        </h2>
+                        <div class="field col-md-12">
+                            {{ form_errors(formleEvent.leShow) }}
+                            {{ form_widget(formleEvent.leShow, {'attr': {"class":'leshow-id'}}) }}
+                        </div>
+                        <div class="offset-lg-3 d-md-none d-lg-block"></div>
+                        <hr class="col-md-11">
+                        <h2 class="field col-md-12 col-lg-6">
+                            date
+                        </h2>
+                        <div class="offset-md-2 offset-lg-4"></div>
+                        <div class="field col-lg-8 ">
+                            {{ form_errors(formleEvent.date) }}
+                            {{ form_widget(formleEvent.date, {'attr': {"class":'date'}}) }}
+
+
+                        </div>
+                        <div class="offset-lg-2"></div>
+                        <div class="offset-md-2 offset-lg-4"></div>
+                        <div class="field col-lg-8 ">
+                            {{ form_errors(formleEvent.place) }}
+                            {{ form_widget(formleEvent.place) }}
+
+
+                        </div>
+                        <div class="offset-lg-2"></div>
+                        <hr class="col-11">
+                    </div>
+
+
+                    <div class="offset-8"></div>
+                    <div class="submit col-lg-4 col-md-6 ">
+                        {{ form_widget(formleEvent.submit, { 'label': 'Publier' } ) }}
+                    </div>
+
+
+                </div>
+            </div>
+        {{ form_end(formleEvent) }}
+    </div>
+
+
+
+{% endblock %}
+
+

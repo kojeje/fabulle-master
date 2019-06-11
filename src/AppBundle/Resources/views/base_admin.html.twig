@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="fr">
+<head>
+    {% include "@App/default/head.html.twig" %}
+</head>
+<body id="body" onload="hideAdmin()">
+    {% block tmp_slide %}{% endblock %}
+    {% include '@App/admin/partials/header_admin.html.twig'%}
+    <div class="flash">
+        {% for label, messages in app.flashes %}
+            {% for message in messages %}
+                <div class="flash-{{ label }}">
+                    {{ message|raw }}
+                </div>
+            {% endfor %}
+        {% endfor %}
+    </div>
+    {% block form %}{% endblock %}
+    {% block content %}{% endblock %}
+    {% block adminFunction %}{% endblock %}
+
+
+    {% include "@App/admin/partials/footer.html.twig" %}
+    {% include "@App/default/up.html.twig" %}
+    {% include "@App/default/script.html.twig" %}
+</body>
+</html>

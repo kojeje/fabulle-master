@@ -1,0 +1,70 @@
+<div class="admin-menu" id="events-admin-menu">
+    <header class="popup-header row">
+
+
+        <div class="col-2">
+            <img src="{{ asset('assets/img/logo_faBulle_2019.png') }}" alt="">
+        </div>
+        <div class="col-12 col-md-2 header-popup-title">ADMIN Dates</div>
+        <div class="col-6 col-md-2" id="popup-header-events-open">
+
+                Les Dates
+
+        </div>
+        <div class="col-6 col-md-2">
+            <a href="{{ path('create_show') }}" class="add-link">
+                <i class="add fal fa-plus"></i>
+                Ajouter
+            </a>
+        </div>
+        <div class="col-1 link" id="popup-header-events-close" onclick="hideAdminLeEventPopup()">
+            <i class="add fas fa-times"></i>
+        </div>
+    </header>
+
+    <hr class="separation">
+    {% for leShow in leShows %}
+        {% if leShow.DispoBoolean == true %}
+            {% for leEvent in leEvents %}
+                {% if  leEvent.leShow == leShow %}
+                    {%  for place in places %}
+                        {% if leEvent.place == place %}
+                            {% if "now"|date < leEvent.date  %}
+                                <div class="show-line row">
+                                    <div class="col-md-2 link show-line-thumb">
+
+                                            <img class="menu-thumb" src="{{ asset('assets/uploads/'~leShow.Img1) }}" alt="{{ leShow.ImgAlt1 }}">
+
+                                    </div>
+                                    <div class="col-5  show-line-titre">
+                                        <a href="{{ path('admin_show_id', {'id': leShow.id}) }}">
+                                            {{ leShow.titre }}
+                                        </a>
+                                    </div>
+                                    <div class="col-2  show-line-date">
+                                        <a href="{{ path('admin_event_id', {'id': leEvent.id}) }}">
+                                            {{ leEvent.date|date('d - m - Y') }}
+                                        </a>
+                                    </div>
+                                    <div class="col-1  show-line-edit">
+                                        <a href="{{ path('admin_update_event', {'id': leShow.id}) }}">
+                                            <i class="fal fa-pen"></i>
+                                        </a>
+                                    </div>
+                                    <div class="col-1  show-line-trash">
+                                        <a href="{{ path('admin_delete_show', {'id': leShow.id}) }}">
+                                            <i class="fal fa-trash"></i>
+                                        </a>
+                                    </div>
+
+                                </div>
+                                <hr>
+
+                            {% endif %}
+                        {% endif %}
+                    {% endfor %}
+                {% endif %}
+            {% endfor %}
+        {% endif %}
+    {% endfor %}
+</div>

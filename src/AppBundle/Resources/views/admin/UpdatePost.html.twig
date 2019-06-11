@@ -1,0 +1,177 @@
+{% extends "@App/base_admin.html.twig" %}
+
+{% block flash %}
+    {% for message in app.flashes('notice') %}
+        <div class="flash-notice">
+            {{ message }}
+        </div>
+    {% endfor %}
+{% endblock %}
+
+{% block form %}
+    <div class="register">
+        <div class="createUser_logo">
+            <div class="img">
+                <img src="{{ asset('assets/img/logo_test.png') }}" alt="img">
+            </div>
+            <h2 class="statut"><span>{{ app.user.username }} ! <br> </span>Modifiez votre article ! </h2>
+
+
+        </div>
+        {{ form_start(formPost, {attr: {novalidate: 'novalidate', class:'formulaire'}}) }}
+        <div class="form_container">
+            <h2>Votre article</h2>
+            <div class="field">
+                {{ form_errors(formPost.titre) }}
+                {{ form_label(formPost.titre,null,
+                    {
+                        'label':'Titre',
+                    }
+                )
+                }}
+                {{ form_widget(formPost.titre, {'attr': {"class":'titre'}}) }}
+            </div>
+
+            <div class="field c">
+                {{ form_errors(formPost.category) }}
+                {{ form_label(formPost.category) }}
+                {{ form_widget(formPost.category, {'attr': {"class":'select'}}) }}
+            </div>
+
+            <div class="img_bloc">
+                <div class="field">
+                    {{ form_errors(formPost.img1) }}
+                    {{ form_label(formPost.img1) }}
+                    {{ form_widget(formPost.img1, {'attr': {"class":'img'}}) }}
+
+                    {{ form_errors(formPost.img_alt1) }}
+                    {{ form_label(formPost.img_alt1) }}
+                    {{ form_widget(formPost.img_alt1) }}
+
+                    {{ form_errors(formPost.img_description1) }}
+                    {{ form_label(formPost.img_description1) }}
+                    {{ form_widget(formPost.img_description1) }}
+                </div>
+            </div>
+
+            <div class="img_bloc">
+                <div class="field">
+                    {{ form_errors(formPost.img2) }}
+                    {{ form_label(formPost.img2) }}
+                    {{ form_widget(formPost.img2, {'attr': {"class":'img'}}) }}
+
+                    {{ form_errors(formPost.img_alt2) }}
+                    {{ form_label(formPost.img_alt2) }}
+                    {{ form_widget(formPost.img_alt2) }}
+
+                    {{ form_errors(formPost.img_description2) }}
+                    {{ form_label(formPost.img_description2) }}
+                    {{ form_widget(formPost.img_description2) }}
+                </div>
+            </div>
+            <div class="img_bloc">
+                <div class="field">
+                    {{ form_errors(formPost.img3) }}
+                    {{ form_label(formPost.img3) }}
+                    {{ form_widget(formPost.img3, {'attr': {"class":'img'}}) }}
+
+                    {{ form_errors(formPost.img_alt3) }}
+                    {{ form_label(formPost.img_alt3) }}
+                    {{ form_widget(formPost.img_alt3) }}
+
+                    {{ form_errors(formPost.img_description3) }}
+                    {{ form_label(formPost.img_description3) }}
+                    {{ form_widget(formPost.img_description3) }}
+                </div>
+            </div>
+            <div class="img_bloc">
+                <div class="field">
+                    {{ form_errors(formPost.img4) }}
+                    {{ form_label(formPost.img4) }}
+                    {{ form_widget(formPost.img4, {'attr': {"class":'img'}}) }}
+
+                    {{ form_errors(formPost.img_alt4) }}
+                    {{ form_label(formPost.img_alt4) }}
+                    {{ form_widget(formPost.img_alt4) }}
+
+                    {{ form_errors(formPost.img_description4) }}
+                    {{ form_label(formPost.img_description4) }}
+                    {{ form_widget(formPost.img_description4) }}
+                </div>
+            </div>
+            <div class="contenu_text">
+                <div class="textarea">
+                    {{ form_errors(formPost.intro) }}
+                    {{ form_label(formPost.intro) }}
+                    {{ form_widget(formPost.intro) }}
+                </div>
+                <div class="bloc_text">
+                    <div class="sub">
+                        {{ form_errors(formPost.sub1) }}
+                        {{ form_label(formPost.sub1) }}
+                        {{ form_widget(formPost.sub1) }}
+                    </div>
+                    <div class="textarea">
+                        {{ form_errors(formPost.text1) }}
+                        {{ form_label(formPost.text1) }}
+                        {{ form_widget(formPost.text1) }}
+                    </div>
+                </div>
+
+                <div class="bloc_text">
+                    <div class="sub">
+                        {{ form_errors(formPost.sub2) }}
+                        {{ form_label(formPost.sub2) }}
+                        {{ form_widget(formPost.sub2) }}
+                    </div>
+                    <div class="textarea">
+                        {{ form_errors(formPost.text2) }}
+                        {{ form_label(formPost.text2) }}
+                        {{ form_widget(formPost.text2) }}
+                    </div>
+                </div>
+                <div class="bloc_text">
+                    <div class="sub">
+                        {{ form_errors(formPost.sub3) }}
+                        {{ form_label(formPost.sub3) }}
+                        {{ form_widget(formPost.sub3) }}
+                    </div>
+                    <div class="textarea">
+                        {{ form_errors(formPost.text3) }}
+                        {{ form_label(formPost.text3) }}
+                        {{ form_widget(formPost.text3) }}
+                    </div>
+                </div>
+                <div class="bloc_text">
+                    <div class="sub">
+                        {{ form_errors(formPost.sub4) }}
+                        {{ form_label(formPost.sub4) }}
+                        {{ form_widget(formPost.sub4) }}
+                    </div>
+                    <div class="textarea">
+                        {{ form_errors(formPost.text4) }}
+                        {{ form_label(formPost.text4) }}
+                        {{ form_widget(formPost.text4) }}
+                    </div>
+                </div>
+                <div class="bloc_video">
+                    <div class="textarea">
+                        {{ form_errors(formPost.youtube) }}
+                        {{ form_label(formPost.youtube) }}
+                        {{ form_widget(formPost.youtube) }}
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="f_type">
+                {{ form_widget(formPost.submit, { 'label': 'soumettre' },{'attr': {"class":'submit'} }) }}
+            </div>
+
+        </div>
+
+
+        {{ form_end(formPost) }}
+    </div>
+{% endblock %}
+

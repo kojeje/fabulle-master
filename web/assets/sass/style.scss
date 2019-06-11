@@ -1,0 +1,563 @@
+@import "partials/var";
+@import "partials/fonts";
+::-webkit-scrollbar {									/* Scrollbars */
+  width: 5px;
+  height: 14px;
+  background: transparent;
+}
+
+body
+{
+  color: #ffffff;
+  background: $dark-blue;
+  width: 100%;
+}
+iframe
+{
+  display: block;
+  width: 80%;
+  margin: auto;
+}
+
+#header-dropdown
+{
+  display: block;
+}
+hr
+{
+  height: 1px;
+  color: $white;
+  opacity: 0.2;
+}
+a{
+  color: $white;
+  text-decoration: none;
+  cursor: pointer;
+}
+h1
+{
+  font-size: 20px;
+  text-align: center;
+  padding: 10px;
+  background: $link;
+  color: $dark-blue;
+  width: 80%;
+  margin: auto;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+h2
+{
+  display: block;
+  font-size: 15px;
+  margin: auto;
+}
+.section-h1
+{
+  font-size: 30px;
+}
+
+p
+{
+  word-break: break-word;
+}
+textarea, text
+{
+  width: 100%;
+  height: 50vh;
+}
+.case
+{
+  display: block;
+  margin: auto;
+  width: 20px !important;
+  height: 20px !important;
+
+}
+.remember
+{
+  width: 80%;
+  margin: auto;
+  text-align: right;
+}
+.case2
+{
+  display: inline;
+}
+.case-label
+{
+  width: 50%;
+  display: inline;
+}
+img
+{
+  display: block;
+  width: 100%;
+
+}
+.success
+{
+  color:lawngreen;
+}
+.error
+{
+  color:red;
+}
+.flash-icon, .flash-notice, .flash-error
+{
+  padding: 40px;
+}
+
+.flash
+{
+  background: transparent;
+  color: $white;
+  padding: 30px;
+  font-size: 40px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+}
+
+.genre, .date
+{
+  border: 1px solid $link;
+  background: $white;
+}
+.date select
+{
+  width: 33%;
+  text-align: center;
+}
+
+hr
+{
+  color:#ffffff !important;
+  border:2px solid $link !important;
+  width: 100% !important;
+  height: 2px !important;
+  z-index: 500
+}
+.select
+{
+
+}
+input {
+  display: block;
+  width: 100%;
+  height: 60px;
+}
+input, textarea, select
+{
+  background-color: $fields;
+  color: $dark-blue;
+
+  padding: 5px;
+  border: 2px solid $white;
+  width: 98%;
+}
+.links a
+{
+  color: $white;
+
+}
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background-image: linear-gradient(to bottom, #000000, #0d0108, #120314, #10081e, #000f28);
+
+}
+
+.links
+{
+  list-style-type: none;
+}
+.link
+{
+  text-decoration: none;
+  cursor: pointer;
+}
+.field, h2, p
+{
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+.statut
+{
+  color: $white;
+  border: 2px solid $white;
+  -webkit-border-radius: 50px;
+  -moz-border-radius: 50px;
+  border-radius: 50px;
+  padding: 40px;
+
+}
+.statut_it
+{
+  text-align: center;
+  font-size: 30px;
+
+}
+.statut p
+{
+  font-size: 25px;
+  color: $link;
+}
+.corps
+{
+  padding: 20px;
+  border: 3px solid #ffb630;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  border-radius: 20px;
+  width: 98%;
+  margin: auto;
+  margin-bottom: 50px;
+
+}
+.corps p, input, select
+{
+  text-align: center;
+  font-size:10px;
+}
+.show2 {
+
+  width: 90%;
+  margin: auto;
+  font-size: 12px;
+  margin-bottom: 30px;
+  max-height: 30vh;
+}
+.show2 img
+{
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+.show2 h2
+{
+
+  padding-left: 20px;
+
+}
+.salle
+{
+  text-align: right;
+}
+.info
+{
+  display: none;
+}
+
+.form-section-title
+{
+  border: 2px solid $dark-blue;
+  border-radius: 10px;
+  color: $dark-blue;
+  background-color: $link;
+  display: block;
+  width: 50%;
+  margin: auto;
+  text-align: center;
+}
+.case
+{
+  width: 12px;
+  margin: 20px;
+}
+.dispo
+{
+  display: flex;
+  justify-content: center;
+  margin: 30px;
+}
+.dispo input
+{
+  margin: 0;
+  margin-bottom: 20px;
+  display: block;
+  margin-left: 20px;
+}
+.createUser_logo
+{
+  margin-bottom: 30px;
+  font-size: 25px;
+  color:#ffb630;
+}
+
+.submit button, .update, .delete
+{
+  border: 2px solid $white;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  border-radius: 20px;
+  padding: 10px;
+  color: $white !important;
+  background: transparent;
+  width: 100%;
+  cursor: pointer;
+}
+.submit_mail
+{
+  width: 40%;
+  margin-left: 50%;
+  margin-top: 30px;
+  background: transparent;
+  color: $white
+}
+.admin_link
+{
+  display: block;
+  width: 40%;
+
+}
+
+.capt
+{
+  width: 80%;
+  margin: auto;
+  padding: 20px;
+  border:1px solid $white
+}
+.admin_container
+{
+
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  padding: 30px;
+}
+.login-field
+{
+  width: 90%;
+  margin: auto;
+}
+.login-field-submit {
+  width: 50%;
+  margin-left: 30%;
+}
+
+.login-field-submit, .login-field, .login-field-label
+{
+  border-radius: 50px;
+  text-align: center !important;
+
+}
+
+.login-field-label
+{
+  margin-left: 28%;
+  margin-top: 30px;
+}
+.preview{
+  padding: 10px;
+}
+
+.post-link
+{
+  width: 100%;
+}
+.admin-menu
+{
+
+  position: fixed;
+  width: 98vw;
+  top:1vh;
+  background: $black;
+  padding: 60px;
+  padding-top: 0;
+  padding-bottom: 20px;
+  left:1vh;
+  overflow-y: auto;
+  z-index:500;
+  pointer-events: auto;
+  height: 98vh;
+  opacity: 1 !important;
+}
+.show-line-titre
+{
+  font-size: 20px;
+  padding-top: 50px;
+}
+
+.show-line-edit,.show-line-trash
+{
+  font-size: 16px;
+  padding-top: 10px;
+}
+.show-line-date
+{
+  font-size:16px;
+  padding-top: 50px;
+}
+.show-line-date a
+{
+  color: $link;
+}
+.fa-trash
+{
+  color: red ;
+}
+.fa-pen
+{
+  color: greenyellow;
+}
+
+.header-popup-title
+{
+  padding-top: 55px;
+  text-align: center;
+  font-weight: 900;
+  font-size: 30px;
+  color: $link;
+}
+.popup-header
+{
+  position: sticky;
+  background: $black;
+  top: 0;
+  z-index: 600;
+}
+.show-line
+{
+  text-align: center;
+  margin-left: 40px;
+
+}
+.header-popup-title, .add-link
+{
+  display: block;
+  width: 80%;
+  text-align: center;
+  margin: auto;
+}
+
+
+.img
+{
+  border: 1px solid $white ;
+}
+.logo2
+{
+ display: none;
+}
+.leshow-id
+{
+  max-height: 30px;
+}
+.edit
+{
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 30px;
+  width: 40%;
+}
+.form_search
+{
+  display: flex;
+  justify-content: space-around;
+  background: $fields;
+  color: $dark-blue;
+}
+.search
+{
+  width: 80%;
+
+}
+.btn-search
+{
+
+  text-align: center;
+  padding: 1px;
+  width: 20%;
+  border:none;
+}
+.article-loop
+{
+  min-height:60vh;
+}
+.btn
+{
+  border-radius: 0 10px 10px 0 !important;
+
+}
+.show>.btn-secondary.dropdown-toggle
+{
+  background-color: transparent !important;
+  border: none;
+}
+.dropdown-menu
+{
+  //position: fixed !important;
+  //width: 100%;
+  background: $dark-blue;
+  transform: translate3d( -84%, 0px, 0px) !important;
+  font-size:15px;
+  overflow-y: auto;
+  pointer-events: auto;
+  position: fixed;
+  width: 98vw;
+  top:1vh;
+  background: $black;
+  padding: 60px;
+  padding-top: 0;
+  padding-bottom: 20px;
+  left:1vh;
+  z-index:500;
+  height: 98vh;
+  opacity: 1 !important;
+
+}
+.search-dropdown
+{
+  margin-top: 20px;
+}
+
+.add-link
+{
+  color: $link !important;
+  padding-top: 55px;
+}
+.add {
+  color: green !important;
+}
+.add2 .fa-home
+{
+  font-size: 30px;
+  text-align: center;
+}
+.add2 {
+  padding-top: 30px;
+  padding-bottom: 30px;
+  font-size: 26px;
+  text-align: center;
+  color: $link;
+
+}
+add3{
+  font-size: 200%;
+}
+.contact_bloc {
+  margin-top: 300px;
+  min-height: 80vh;
+}
+.answer_soon, .home_button {
+  text-align: center;
+}
+
+.ad {
+  text-align: center;
+}
+
+.endroit {
+  padding-top: 25px;
+  margin-bottom: 25px;
+}
+.fa-chevron-down
+{
+display:none;
+}
+
+
+@import "partials/states";
+@import "partials/responsive";

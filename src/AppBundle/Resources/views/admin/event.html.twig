@@ -1,0 +1,114 @@
+{% extends "@App/base_admin.html.twig" %}
+
+{% block content %}
+    <a id="article-anch" class="anch"></a>
+{#{% for element in leEvent.leShow %}#}
+
+    <div class="content-wrapper">
+
+                                    <article id="{{leEvent.id}}">
+                                        <section class="article-content row">
+                                    <div class="show3 show2 article-loop show col-12 col-md-6   ">
+
+                                        <a class="row event-show-link" href="{{path ('show_id', {'id': leEvent.leShow.id}) }}">
+
+                                            <h1 class="article-h1 col-12">
+                                                {{ leEvent.leShow.Titre }}
+                                            </h1>
+                                            <div class="offset-md-4"></div>
+                                            <div class="thumb-medal col-md-4">
+                                                <img src="{{asset('assets/uploads/'~leEvent.leShow.Img1)}}" alt="{{ leEvent.leShow.ImgAlt1 }}" class="affiche">
+                                            </div>
+                                            <div class="offset-md-4"></div>
+
+                                            <div class="offset-md-6"></div>
+
+                                            <p class="info col-12 col-md-6">
+                                                {{ leEvent.leShow.Genre }}
+                                            </p>
+
+                                            <p class="info col-12 col-md-6">
+                                                A partir de: {{ leEvent.leShow.MinAge }} ans
+                                            </p>
+                                            <div class="offset-md-3"></div>
+                                            <p class="info col-12 col-md-6">
+                                                durée: {{ leEvent.leShow.Duree }} .
+                                            </p>
+                                            <div class="offset-md-3"></div>
+                                        </a>
+
+                                    </div>
+                                    <div class="event">
+
+                                        <h1 class="date">Le {{ leEvent.Date|date("d/m/Y") }}</h1>
+                                        <div class="place container">
+
+                                            <div class="endroit row">
+
+                                                <div class="adress col-md-5">
+                                                    <h1 class="h1-medal hall">
+                                                        {{ leEvent.place.name }}
+                                                    </h1>
+
+                                                    <p class="ad">
+                                                        {{ leEvent.place.Ad1 }}
+                                                    </p>
+                                                    {% if leEvent.place.ad2 %}
+                                                        <p class="ad">
+                                                            {{ leEvent.place.Ad2 }}
+                                                        </p>
+                                                    {% endif %}
+                                                    <p class="ad">
+                                                        <strong>
+                                                            {{ leEvent.place.Cp }}
+                                                        </strong>
+
+                                                        <strong>
+                                                            {{ leEvent.place.Commune }}
+                                                        </strong>
+                                                    </p>
+                                                    {% if leEvent.place.Country != 'FR' %}
+                                                        <p class="ad">
+                                                            <strong>
+                                                                {{ leEvent.place.Country }}
+                                                            </strong>
+                                                        </p>
+                                                    {% endif %}
+                                                    <p class="ad tel">
+                                                        {{ leEvent.place.tel }}
+                                                    </p>
+                                                    <p class="ad url">
+                                                        <a href="{{ leEvent.place.site }}" target="_blank">site web</a>
+                                                    </p>
+                                                    {% if leEvent.place.email%}
+                                                        <p class="ad">
+                                                            <a href="mailto:{{ leEvent.place.email }}">
+                                                                email
+                                                            </a>
+                                                        </p>
+                                                    {% endif %}
+                                                    <a href="{{ path('events') }}">
+                                                        <p class="ad back-link nest-date next-date-3">
+                                                            <i class="fal fa-arrow-circle-left"></i> retour dates
+                                                        </p>
+                                                    </a>
+                                                </div>
+                                                <div class="offset-md-1"></div>
+                                                <div class="map col-md-6">
+                                                    {{ leEvent.place.Gmap|raw  }}
+                                                </div>
+
+
+                                            </div>
+
+
+                                        </div>
+                                        {% include '@App/admin/partials/admin-events-icons.html.twig' %}
+                                    </div>
+
+            </section>
+        </article>
+    </div>
+
+{% endblock %}
+

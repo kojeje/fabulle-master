@@ -1,0 +1,133 @@
+{% extends '@App/base.html.twig' %}
+
+{% block tmp_slide %}
+
+    <!-- SLIDER -->
+    <!-- Bloc Image -->
+    <section id="carouselExampleIndicators" class="carousel slide d-none d-sm-block" data-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <!-- IMAGE 1265 X 550 -->
+                <img class="d-block w-100" src="{{ asset('assets/uploads/'~post.Img2) }}" alt="First slide">
+            </div>
+            <div class="carousel-item">
+                <!-- IMAGE 1265 X 550 -->
+                <img class="d-block w-100" src="{{ asset('assets/uploads/'~post.Img3) }}" alt="Second slide">
+            </div>
+            <div class="carousel-item">
+                <!-- IMAGE 1265 X 550 -->
+                <img class="d-block w-100" src="{{ asset('assets/uploads/'~post.Img4) }}" alt="Third slide">
+            </div>
+            <div class="carousel-item">
+                <!-- IMAGE 1265 X 550 -->
+                <img class="d-block w-100" src="{{ asset('assets/uploads/'~post.Img5) }}" alt="Fourth slide">
+            </div>
+        </div>
+        <div class="carousel-caption d-none d-md-block caption caption2">
+            <!-- texte -->
+            {{ post.SlCaption }}
+            <!-- BOUTONS SCROLL-->
+            <a href="#article-anch" class="anch">
+                <div class="button button-h">
+                    <p>
+                        <i class="fas fa-chevron-down"></i>
+                    </p>
+                </div>
+            </a>
+        </div>
+        <!-- BOUTONS -->
+        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
+
+    </section>
+{% endblock %}
+
+{% block content %}
+    <!-- CORPS DE LA PAGE -->
+    <a id="article-anch" class="anch d-none d-md-block"></a>
+    <section class="article-loop article-loop2 container" id="article-loop">
+        <div class="row">
+            <section class="article-content post row">
+                <!-- TITRE de la Page-->
+                <div id="title-bloc" class="title-bloc flex-title-bloc col-12 col-md-3">
+                    <h2 class="article-h1 section-h1 flex-h1 h1-event-list" >
+                        <i class="fal fa-post-lg"> </i>
+                        Accueil
+                    </h2>
+
+                    <a href="#article-anch2" class="flex-btn">
+                        <div class="button button2 button3">
+                            <p><i class="fas fa-chevron-down"></i></p>
+                        </div>
+                    </a>
+                </div>
+                <div class="offset-md-1"></div>
+                <!-- Image -->
+                <div class="col-md-8 col-12" id="home-img">
+                    <div class="img-alt-home">
+                        <img src="{{ asset('assets/uploads/'~post.Img1) }}" alt="{{ post.ImgAlt1 }}" class="thumb-medal flex-thumb thumb-medal2">
+                    </div>
+                    <!-- Titre paragraphe -->
+                    <h2 class="article-h1 article-h2">
+                        {{ post.titre }}
+                    </h2>
+                    <!-- Texte -->
+                    <p>
+                        {{post.text1}}
+                    </p>
+                </div>
+
+                <div class="offset-md-2"></div>
+            </section>
+        </div>
+    </section>
+
+    <a class="col-12 d-none d-md-block" id="article-anch2"></a>
+    <section class="article-loop article-loop2 video-bloc container-fluid">
+        <div class="article-content row">
+            <div class="article-loop video-content order-2 order-md-1 col-12 col-md-6" id="video">
+                {{ post.youtube|raw }}
+            </div>
+            <div class="offset-lg-1 d-none d-lg-block video-offset"></div>
+            <div class="title-bloc order-1 order-md-2 d-video-title-bloc col-md-5">
+                <h2 class="article-h1 section-h1 h1-event-list" id="video-title">
+                    <i class="fal fa-video"></i> Videos
+                </h2>
+                <a href="#article-anch3" class="col-md-12 d-none d-md-block">
+                    <div class="button button2 button3">
+                        <p>
+                            <i class="fas fa-chevron-down"></i>
+                        </p>
+                    </div>
+                </a>
+
+            </div>
+        </div>
+    </section>
+    <a class="col-md-12 d-lg-block d-none" id="article-anch3"></a>
+    <section class="article-loop article-loop2 row">
+
+
+        <a  id="article-anch3"></a>
+
+
+
+
+        {% include"@App/default/new-shows-loop.html.twig" %}
+    </section>
+
+
+
+
+    {% include"@App/default/events-loop.html.twig" %}
+
+{% endblock %}
+
+
+

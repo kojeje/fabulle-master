@@ -1,0 +1,72 @@
+<div class="admin-menu" id="places-admin-menu">
+    <div class="popup-header row">
+
+
+        <div class="col-2">
+            <img src="{{ asset('assets/img/logo_faBulle_2019.png') }}" alt="logo">
+        </div>
+        <div class="col-12 col-md-2 header-popup-title">ADMIN Lieux</div>
+        <div class="col-6 col-md-2 ">
+            <a href="{{ path('admin_places') }}" class="@-link">
+                Lieux
+            </a>
+        </div>
+        <div class="col-6 col-md-2">
+            <a href="{{ path('create_place') }}" class="add-link">
+                <i class="add fal fa-plus"></i>
+                Ajouter
+            </a>
+        </div>
+        <div class="col-1 link" id="popup-header-places-close" onclick="hideAdminPlacePopup()">
+            <i class="add fas fa-times"></i>
+        </div>
+    </div>
+
+
+
+    <hr class="separation">
+    {% for place in places %}
+
+
+        <div class="show-line row">
+
+            <div class="col-3 show-line-titre">
+                <a href="{{ path('admin_place_id', {'id': place.Id}) }}">
+                    {{ place.name }}
+                </a>
+            </div>
+            <div class="col-2 show-line-titre">
+
+                    {{ place.cp }}
+
+            </div>
+            <div class="col-3 show-line-titre">
+
+                {{ place.commune }}
+
+            </div>
+
+
+
+
+
+            <div class="col-1 show-line-edit">
+                <a href="{{ path('admin_update_place', {'id': place.Id}) }}">
+                    <i class="fal fa-pen"></i>
+                </a>
+            </div>
+            <div class="col-1 show-line-trash">
+                <a href="{{ path('admin_delete_place', {'id': place.Id}) }}">
+                    <i class="fal fa-trash"></i>
+                </a>
+            </div>
+            <hr class="separation">
+        </div>
+
+    {% endfor %}
+</div>
+
+
+
+
+
